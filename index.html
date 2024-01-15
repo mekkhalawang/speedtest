@@ -159,10 +159,10 @@ function initUI(){
 		color:#FFFFFF;
 	}
 	#startStopBtn:before{
-		content:"Start";
+		content:"开始测速";
 	}
 	#startStopBtn.running:before{
-		content:"Abort";
+		content:"停止测速";
 	}
 	#test{
 		margin-top:2em;
@@ -273,35 +273,35 @@ function initUI(){
 		}
 	}
 </style>
-<title>LibreSpeed Example</title>
+<title>达里安网络测速站</title>
 </head>
 <body>
-<h1>LibreSpeed Example</h1>
+<h1>达里安网络测速站</h1>
 <div id="testWrapper">
 	<div id="startStopBtn" onclick="startStop()"></div><br/>
-	<a class="privacy" href="#" onclick="I('privacyPolicy').style.display=''">Privacy</a>
+	<a class="privacy" href="#" onclick="I('privacyPolicy').style.display=''">隐私说明</a>
 	<div id="test">
 		<div class="testGroup">
 			<div class="testArea2">
-				<div class="testName">Ping</div>
+				<div class="testName">延迟</div>
 				<div id="pingText" class="meterText" style="color:#AA6060"></div>
 				<div class="unit">ms</div>
 			</div>
 			<div class="testArea2">
-				<div class="testName">Jitter</div>
+				<div class="testName">抖动</div>
 				<div id="jitText" class="meterText" style="color:#AA6060"></div>
 				<div class="unit">ms</div>
 			</div>
 		</div>
 		<div class="testGroup">
 			<div class="testArea">
-				<div class="testName">Download</div>
+				<div class="testName">下载速度</div>
 				<canvas id="dlMeter" class="meter"></canvas>
 				<div id="dlText" class="meterText"></div>
 				<div class="unit">Mbit/s</div>
 			</div>
 			<div class="testArea">
-				<div class="testName">Upload</div>
+				<div class="testName">上传速度</div>
 				<canvas id="ulMeter" class="meter"></canvas>
 				<div id="ulText" class="meterText"></div>
 				<div class="unit">Mbit/s</div>
@@ -316,47 +316,19 @@ function initUI(){
 			<input type="text" value="" id="resultsURL" readonly="readonly" onclick="this.select();this.focus();this.select();document.execCommand('copy');alert('Link copied')"/>
 			<img src="" id="resultsImg" />
 		</div>
-	</div>
-	<a href="https://github.com/librespeed/speedtest">Source code</a>
-</div>
 <div id="privacyPolicy" style="display:none">
-    <h2>Privacy Policy</h2>
-    <p>This HTML5 speed test server is configured with telemetry enabled.</p>
-    <h4>What data we collect</h4>
-    <p>
-        At the end of the test, the following data is collected and stored:
+    <h2>隐私说明</h2>
+    <h4>使用本测速网站，测试完成时，以下信息会保存在服务器端:</h4>
         <ul>
-            <li>Test ID</li>
-            <li>Time of testing</li>
-            <li>Test results (download and upload speed, ping and jitter)</li>
-            <li>IP address</li>
-            <li>ISP information</li>
-            <li>Approximate location (inferred from IP address, not GPS)</li>
-            <li>User agent and browser locale</li>
-            <li>Test log (contains no personal information)</li>
+            <li>测试时间</li>
+            <li>测试结果(下载、上传速度，网络延迟，延迟抖动)</li>
+            <li>IP地址</li>
+            <li>浏览器的User Agent信息</li>
         </ul>
-    </p>
-    <h4>How we use the data</h4>
-    <p>
-        Data collected through this service is used to:
-        <ul>
-            <li>Allow sharing of test results (sharable image for forums, etc.)</li>
-            <li>To improve the service offered to you (for instance, to detect problems on our side)</li>
-        </ul>
-        No personal information is disclosed to third parties.
-    </p>
-    <h4>Your consent</h4>
-    <p>
-        By starting the test, you consent to the terms of this privacy policy.
-    </p>
-    <h4>Data removal</h4>
-    <p>
-        If you want to have your information deleted, you need to provide either the ID of the test or your IP address. This is the only way to identify your data, without this information we won't be able to comply with your request.<br/><br/>
-        Contact this email address for all deletion requests: <a href="mailto:PUT@YOUR_EMAIL.HERE">TO BE FILLED BY DEVELOPER</a>.
     </p>
     <br/><br/>
     <div class="closePrivacyPolicy">
-        <a class="privacy" href="#" onclick="I('privacyPolicy').style.display='none'">Close</a>
+        <a class="privacy" href="#" onclick="I('privacyPolicy').style.display='none'">关闭</a>
     </div>
     <br/>
 </div>
